@@ -13,7 +13,7 @@ class EntryController {
     static var sharedInstance = EntryController()
     var entries: [Entry] = []
     
-    func addEntries() {
+    /*func addEntries() {
         let spot = Entry()
         spot.title = "test 1"
         spot.coordinate = CLLocationCoordinate2D(latitude: -33.906764,longitude: 18.4164983)
@@ -28,9 +28,20 @@ class EntryController {
         
         entries = [spot, spot2, spot3]
 
-    }
+    }*/
     
     func getEntries() -> [Entry] {
+        // Set up file manager
+        let manager = NSFileManager.defaultManager()
+        let documents = manager.URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)[0]
+        
+        // Make URL to documents folder
+        let fileURL = documents.URLByAppendingPathComponent("entries.txt")
+            
+        if let entryList = NSKeyedUnarchiver.unarchiveObjectWithFile(fileURL.path!) as? [Entry]
+        {
+            self.entries = entryList
+        }
         return entries
     }
 }

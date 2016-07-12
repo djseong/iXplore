@@ -17,6 +17,9 @@
 		65A1B6541D3398E300D8A679 /* EntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A1B6531D3398E300D8A679 /* EntryController.swift */; };
 		65BF5A951D340B3800F99F91 /* AddEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BF5A931D340B3800F99F91 /* AddEntryViewController.swift */; };
 		65BF5A961D340B3800F99F91 /* AddEntryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65BF5A941D340B3800F99F91 /* AddEntryViewController.xib */; };
+		65BF5A981D34195500F99F91 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65BF5A971D34195500F99F91 /* CoreLocation.framework */; };
+		65D41A501D35087E0023B4A8 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D41A4E1D35087E0023B4A8 /* TableViewCell.swift */; };
+		65D41A511D35087E0023B4A8 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65D41A4F1D35087E0023B4A8 /* TableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		65A1B6531D3398E300D8A679 /* EntryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryController.swift; sourceTree = "<group>"; };
 		65BF5A931D340B3800F99F91 /* AddEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEntryViewController.swift; sourceTree = "<group>"; };
 		65BF5A941D340B3800F99F91 /* AddEntryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddEntryViewController.xib; sourceTree = "<group>"; };
+		65BF5A971D34195500F99F91 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		65D41A4E1D35087E0023B4A8 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		65D41A4F1D35087E0023B4A8 /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65BF5A981D34195500F99F91 /* CoreLocation.framework in Frameworks */,
 				65A1B64E1D33944B00D8A679 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -49,6 +56,7 @@
 		65A1B6291D33935B00D8A679 = {
 			isa = PBXGroup;
 			children = (
+				65BF5A971D34195500F99F91 /* CoreLocation.framework */,
 				65A1B64D1D33944B00D8A679 /* MapKit.framework */,
 				65A1B6341D33935B00D8A679 /* iXplore */,
 				65A1B6331D33935B00D8A679 /* Products */,
@@ -100,6 +108,8 @@
 				65A1B64A1D33942600D8A679 /* MapViewController.xib */,
 				65BF5A931D340B3800F99F91 /* AddEntryViewController.swift */,
 				65BF5A941D340B3800F99F91 /* AddEntryViewController.xib */,
+				65D41A4E1D35087E0023B4A8 /* TableViewCell.swift */,
+				65D41A4F1D35087E0023B4A8 /* TableViewCell.xib */,
 			);
 			name = "View controller";
 			sourceTree = "<group>";
@@ -163,6 +173,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				65A1B6401D33935B00D8A679 /* LaunchScreen.storyboard in Resources */,
+				65D41A511D35087E0023B4A8 /* TableViewCell.xib in Resources */,
 				65BF5A961D340B3800F99F91 /* AddEntryViewController.xib in Resources */,
 				65A1B64C1D33942600D8A679 /* MapViewController.xib in Resources */,
 				65A1B63D1D33935B00D8A679 /* Assets.xcassets in Resources */,
@@ -179,6 +190,7 @@
 				65A1B6361D33935B00D8A679 /* AppDelegate.swift in Sources */,
 				65A1B64B1D33942600D8A679 /* MapViewController.swift in Sources */,
 				65A1B6541D3398E300D8A679 /* EntryController.swift in Sources */,
+				65D41A501D35087E0023B4A8 /* TableViewCell.swift in Sources */,
 				65BF5A951D340B3800F99F91 /* AddEntryViewController.swift in Sources */,
 				65A1B6511D3397A700D8A679 /* Entry.swift in Sources */,
 			);

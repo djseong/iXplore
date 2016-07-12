@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddEntryViewController" customModule="iXplore" customModuleProvider="target">
             <connections>
+                <outlet property="imageview" destination="iPZ-b5-Dgf" id="WSE-tE-CnN"/>
                 <outlet property="latitudefield" destination="HHB-Kt-jmu" id="p5U-7D-hWN"/>
                 <outlet property="longitudefield" destination="vY4-Ae-KgM" id="1uy-mP-x4b"/>
                 <outlet property="notesfield" destination="9Id-S9-4Ws" id="qDk-wb-XzW"/>
@@ -78,9 +79,25 @@
                         <action selector="SavePressed:" destination="-1" eventType="touchUpInside" id="PFR-48-94i"/>
                     </connections>
                 </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iPZ-b5-Dgf">
+                    <rect key="frame" x="180" y="320" width="240" height="128"/>
+                    <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="128" id="0hl-Sc-lF3"/>
+                        <constraint firstAttribute="width" constant="240" id="63P-F9-rtK"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bf7-fz-XfO">
+                    <rect key="frame" x="283" y="473" width="34" height="30"/>
+                    <state key="normal" title="Load"/>
+                    <connections>
+                        <action selector="LoadPressed:" destination="-1" eventType="touchUpInside" id="IdH-Gw-AmD"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="iPZ-b5-Dgf" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="15S-ze-Jwd"/>
                 <constraint firstItem="vY4-Ae-KgM" firstAttribute="top" secondItem="HHB-Kt-jmu" secondAttribute="bottom" constant="25" id="1s3-0A-S4i"/>
                 <constraint firstItem="vY4-Ae-KgM" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="1yn-kB-Ktw"/>
                 <constraint firstItem="9Id-S9-4Ws" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="7lg-I0-OFR"/>
@@ -88,11 +105,14 @@
                 <constraint firstAttribute="trailing" secondItem="xcA-oV-2en" secondAttribute="trailing" constant="32" id="Nof-2V-0Pe"/>
                 <constraint firstItem="HgA-7c-Rul" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="UCE-G2-kpF"/>
                 <constraint firstItem="9Id-S9-4Ws" firstAttribute="top" secondItem="HgA-7c-Rul" secondAttribute="bottom" constant="25" id="UIh-gT-ijS"/>
+                <constraint firstItem="iPZ-b5-Dgf" firstAttribute="top" secondItem="vY4-Ae-KgM" secondAttribute="bottom" constant="25" id="Vgv-bR-5Pb"/>
                 <constraint firstItem="HHB-Kt-jmu" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="XWk-Gv-7Ws"/>
                 <constraint firstItem="HgA-7c-Rul" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="100" id="XeU-z1-WLP"/>
+                <constraint firstItem="bf7-fz-XfO" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="YG7-QT-x4p"/>
                 <constraint firstItem="HHB-Kt-jmu" firstAttribute="top" secondItem="9Id-S9-4Ws" secondAttribute="bottom" constant="25" id="Zs1-vN-nhV"/>
                 <constraint firstItem="xcA-oV-2en" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="25" id="jUt-1A-Fr5"/>
                 <constraint firstItem="kx3-5Y-liM" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="25" id="sCH-1r-Fo6"/>
+                <constraint firstItem="bf7-fz-XfO" firstAttribute="top" secondItem="iPZ-b5-Dgf" secondAttribute="bottom" constant="25" id="wdO-BR-eSS"/>
             </constraints>
         </view>
     </objects>

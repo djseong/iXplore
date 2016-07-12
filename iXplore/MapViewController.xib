@@ -18,17 +18,18 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bq7-9m-Pwc">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="350"/>
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="420"/>
                 </mapView>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="104-Fa-EcD">
-                    <rect key="frame" x="0.0" y="350" width="600" height="250"/>
+                <tableView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" rowHeight="75" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="104-Fa-EcD">
+                    <rect key="frame" x="0.0" y="420" width="600" height="180"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="separatorColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                 </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="bq7-9m-Pwc" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="0Js-SO-vea"/>
-                <constraint firstAttribute="bottom" secondItem="bq7-9m-Pwc" secondAttribute="bottom" constant="250" id="2i3-8R-y2w"/>
+                <constraint firstAttribute="bottom" secondItem="bq7-9m-Pwc" secondAttribute="bottom" constant="180" id="2i3-8R-y2w"/>
                 <constraint firstAttribute="trailing" secondItem="bq7-9m-Pwc" secondAttribute="trailing" id="6U7-g0-5Pj"/>
                 <constraint firstAttribute="bottom" secondItem="104-Fa-EcD" secondAttribute="bottom" id="BHw-5Y-g4p"/>
                 <constraint firstItem="104-Fa-EcD" firstAttribute="top" secondItem="bq7-9m-Pwc" secondAttribute="bottom" id="ETx-Yd-gGQ"/>

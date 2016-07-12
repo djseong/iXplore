@@ -18,7 +18,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, UITableViewDataSou
         super.viewDidLoad()
         
         // Initialize dummy data
-        EntryController.sharedInstance.addEntries()
+        //EntryController.sharedInstance.addEntries()
         
         // Navigation bar
         navigationItem.title = "iXplore"
@@ -29,8 +29,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, UITableViewDataSou
         tableview.delegate = self
         tableview.dataSource = self
         
-        
-        
+        // Register custom cell
+        tableview.registerNib(UINib (nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "cellidentifier")
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -47,6 +47,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, UITableViewDataSou
         mapview.addAnnotations(EntryController.sharedInstance.getEntries())
     }
     
+    // Go to AddEntry view 
     func AddEntry() {
         let addentryviewcontroller = AddEntryViewController(nibName: "AddEntryViewController", bundle: nil)
         self.presentViewController(addentryviewcontroller, animated: true, completion: nil)
@@ -63,14 +64,18 @@ class MapViewController: UIViewController, MKMapViewDelegate, UITableViewDataSou
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let identifier = "cellidentifier"
-        var reusableCell = tableView.dequeueReusableCellWithIdentifier(identifier)
-        if reusableCell == nil {
-            reusableCell = UITableViewCell(style: .Default, reuseIdentifier: identifier)
+        let reusableCell = tableView.dequeueReusableCellWithIdentifier(identifier) as! TableViewCell
         
-            
-        }
-        reusableCell!.textLabel?.text = EntryController.sharedInstance.getEntries()[indexPath.row].title!
-        return reusableCell!
+        // Format date
+        let date = EntryController.sharedInstance.getEntries()[indexPath.row].date
+        let calendar = NSCalendar.currentCalendar()
+        let components = calendar.components([.Day , .Month , .Year], fromDate: date)
+
+        reusableCell.titleLabel.text = EntryController.sharedInstance.getEntries()[indexPath.row].title!
+        reusableCell.dateLabel.text = String(components.month) + "/" + String(components.day) + "/" + String(components.year)
+        //reusableCell.imageview = UIImageView(image: EntryController.sharedInstance.getEntries()[indexPath.row].image)
+        reusableCell.imageview.image = EntryController.sharedInstance.getEntries()[indexPath.row].image
+        return reusableCell
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -85,15 +90,17 @@ class MapViewController: UIViewController, MKMapViewDelegate, UITableViewDataSou
 
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+        let remove = UITableViewRowAction(style: .Default, title: "Delete", handler: { (action, path) in
+            print(path.row)
+            var removeEntry = EntryController.sharedInstance.entries.removeAtIndex(path.row)
+            //self.tableview.reloadData()
+            print(removeEntry.title)
+           // print(EntryController.sharedInstance.entries[path.row].title)
+        })
+        tableview.reloadData()
+        return [remove]
     }
-    */
+    
 
 }
